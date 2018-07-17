@@ -8,7 +8,6 @@ def get_character_movies_from_api(character)
   all_characters = RestClient.get("http://www.swapi.co/api/people/")
   character_hash = JSON.parse(all_characters)
 
-
   results = character_hash["results"]
   films = []
   results.each do |desired_character|
