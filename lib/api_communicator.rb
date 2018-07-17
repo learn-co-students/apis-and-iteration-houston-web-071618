@@ -8,7 +8,7 @@ def get_character_movies_from_api(character)
   character_hash = JSON.parse(all_characters)
   # iterate over the character hash to find the collection of `films` for the given
   star_wars = character_hash["results"]
-
+  binding.pry
   # find character
   desired_character = star_wars.find do | current_character |
     current_character["name"].downcase == character
@@ -61,7 +61,7 @@ def show_character_movies(character)
   parse_character_movies(films_hash)
   end
 end
-show_character_movies("Luke Skywalker")
+# show_character_movies("Luke Skywalker")
 
 ## BONUS
 
