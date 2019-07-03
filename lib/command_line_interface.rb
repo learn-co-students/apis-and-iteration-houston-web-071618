@@ -1,6 +1,6 @@
 def welcome
   # puts out a welcome message here!
-  "Welcome to Star Wars Search Engine!"
+  puts "Welcome to Star Wars Search Engine!"
 
 end
 

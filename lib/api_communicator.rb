@@ -11,11 +11,11 @@ def get_character_movies_from_api(character)
   results = character_hash["results"]
   films = []
   results.each do |desired_character|
+    binding.pry
     if desired_character["name"].downcase == character
-      return films = desired_character["films"]
+      films = desired_character["films"]
     end
   end
-  nil
 
   # iterate over the character hash to find the collection of `films` for the given
   #   `character`
@@ -34,8 +34,8 @@ def parse_character_movies(films_array)
   films_array.collect do |film_urls|
     counter += 1
     all_films = RestClient.get(film_urls)
-    pursed_films = JSON.parse(all_films)
-    puts "#{counter}. #{pursed_films["title"]}"
+    parsed_films = JSON.parse(all_films)
+    puts "#{counter}. #{parsed_films["title"]}"
   end
 end
 
